@@ -5,7 +5,6 @@ import { Product, FooterBanner, HeroBanner } from '../components';
 const Home = ({ products, bannerData }) => (
   <div>
     <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
-    {console.log(bannerData)}
     <div className='products-heading'>
       <h2>Best Selling Products</h2>
       <p>Speakers of many variations</p>
@@ -15,9 +14,7 @@ const Home = ({ products, bannerData }) => (
       {products?.map((product) => <Product key={product._id} product={product} />)}
     </div>
 
-    {console.log(products)}
-
-    <FooterBanner />
+    <FooterBanner footerBanner={bannerData && bannerData[0]} />
   </div>
 );
 
